@@ -1,0 +1,33 @@
+body {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.item {
+  width: 100px;
+  min-width: 100px;
+  height: 150px;
+  min-height: 150px;
+  font-family: "Tahoma", "Arial", sans-serif;
+  font-size: 40px;
+  background-color: #eeeff2;
+  border-left: 10px dotted #d0d0ff;
+  padding: 10px;
+  margin: 5px;
+}
+
+.item:hover {
+  background-color: yellow;
+  color: goldenrod;
+  cursor: pointer;
+}
+
+#itemF {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
