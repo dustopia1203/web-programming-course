@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import models from "../../modelData/models";
 
-function UserList({ setState }) {
+function UserList() {
   const users = models.userListModel();
   return (
     <div>

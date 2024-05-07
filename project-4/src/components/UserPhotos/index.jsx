@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
 import { useParams } from "react-router-dom";
 import models from "../../modelData/models";
 import Comments from "./Comments";
+import { useLabel } from "../../label";
 
-function UserPhotos({ setState }) {
+function UserPhotos() {
+  const { setState } = useLabel();
   const user = useParams();
   const data = models.userModel(user.userId);
   const photos = models.photoOfUserModel(user.userId);
-  setState("Photos of " + data.first_name);
+  useEffect(() => {
+    setState("Photos of " + data.first_name);
+  }, []);
   return (
     <>
       <div>

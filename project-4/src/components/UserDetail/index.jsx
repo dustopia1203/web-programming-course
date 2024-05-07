@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import { useParams } from "react-router-dom";
 import models from "../../modelData/models";
+import { useLabel } from "../../label";
 
-function UserDetail({ setState }) {
+function UserDetail() {
+  const { setState } = useLabel();
   const user = useParams();
   const data = models.userModel(user.userId);
-  setState(data.first_name + "'s information");
+  useEffect(() => {
+    setState(data.first_name + "'s information");
+  }, []);
   return (
     <>
       <div>
