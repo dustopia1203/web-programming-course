@@ -2,8 +2,10 @@ import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import { useLabel } from "../../label";
 
-function TopBar({ state }) {
+function TopBar() {
+  const { state } = useLabel();
   return (
     <AppBar className="topbar-appBar" position="absolute">
       <Toolbar className="toolbar">

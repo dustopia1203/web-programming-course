@@ -3,8 +3,10 @@ import "./styles.css";
 import { useParams } from "react-router-dom";
 import fetchModel from "../../lib/fetchModelData";
 import Comments from "./Comments";
+import { useLabel } from "../../label";
 
-function UserPhotos({ setState }) {
+function UserPhotos() {
+  const { setState } = useLabel();
   const user = useParams();
   const [data, setData] = useState({});
   const [photos, setPhotos] = useState([]);
@@ -20,8 +22,8 @@ function UserPhotos({ setState }) {
       setPhotos(data2);
     };
     getData();
+    setState("Photos of " + data.first_name);
   }, []);
-  setState("Photos of " + data.first_name);
   return (
     <>
       <div>

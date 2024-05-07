@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import { useParams } from "react-router-dom";
 import fetchModel from "../../lib/fetchModelData";
+import { useLabel } from "../../label";
 
-function UserDetail({ setState }) {
+function UserDetail() {
+  const { setState } = useLabel();
   const user = useParams();
   const [data, setData] = useState({});
   useEffect(() => {
@@ -15,8 +17,8 @@ function UserDetail({ setState }) {
       setData(data[0]);
     };
     getData();
+    setState(data.first_name + "'s information");
   }, []);
-  setState(data.first_name + "'s information");
   return (
     <>
       <div>
