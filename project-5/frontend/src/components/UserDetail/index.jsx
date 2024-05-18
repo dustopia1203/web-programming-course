@@ -15,10 +15,10 @@ function UserDetail() {
         `http://localhost:8081/api/user/${user.userId}`
       );
       setData(data[0]);
+      setState(data[0]?.first_name + "'s information");
     };
     getData();
-    setState(data.first_name + "'s information");
-  }, []);
+  }, [setState, user.userId]);
   return (
     <>
       <div>

@@ -22,8 +22,10 @@ function UserPhotos() {
       setPhotos(data2);
     };
     getData();
-    setState("Photos of " + data.first_name);
-  }, []);
+    if (data.first_name) {
+      setState("Photos of " + data.first_name);
+    }
+  }, [data.first_name, setState, user.userId]);
   return (
     <>
       <div>

@@ -12,7 +12,7 @@ function UserList() {
       setUsers(data);
     };
     getData();
-  }, []);
+  });
   return (
     <div>
       <List component="nav">
